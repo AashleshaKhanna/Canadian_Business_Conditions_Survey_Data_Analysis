@@ -144,8 +144,7 @@ retained, not treated as a fault.
 business_data_lab_assignment/
 ├── README.md                 this file
 ├── requirements.txt
-├── report/
-│   ├── bdl_assignment_report.pdf    the full report solution
+├── bdl_assignment_report.pdf    the full report solution
 ├── data/
 │   ├── raw/                  the 4 supplied quarterly CSVs
 │   └── processed/            combined_csbc.csv (written by notebook 01)
