@@ -1,4 +1,4 @@
-# Canadian Survey on Business Conditions — Analysis & Quarterly Refresh Pipeline
+# Canadian Survey on Business Conditions: Analysis & Quarterly Refresh Pipeline
 
 **Aashlesha Khanna** · Data Scientist Application, Business Data Lab, Canadian Chamber of Commerce
 
@@ -9,7 +9,7 @@ end to end, plus a pipeline that absorbs future quarters without manual rework.
 
 ## The finding, in short
 
-Business expectations improved into Q2 2024 — but the improvement is narrower than the national
+Business expectations improved into Q2 2024: but the improvement is narrower than the national
 headline suggests.
 
 1. **Sales, employment and profitability** increase-expectations each hit four-quarter highs
@@ -19,15 +19,13 @@ headline suggests.
    employment), and investment is **statistically uncorrelated** with the other three metrics
    (mean r = 0.10 vs 0.32–0.36).
 3. **Margin pessimism is entrenched, not emerging.** **12 of 13 industries** expect profitability to
-   fall in Q2 2024 — and **every** industry expected it in **each of the three prior quarters**. The
+   fall in Q2 2024, and **every** industry expected it in **each of the three prior quarters**. The
    mean balance is improving (−23.9 → −17.1 pp), so Q2 is the least bad of the four; but businesses
    have expected to sell more and earn less for a year, which is a cost-side story.
-4. **The improvement was regionally concentrated.** Ontario (**+1.6 pp**) and Quebec (**+2.2 pp**) —
-   the two largest economies — came in *below* the national +2.9 pp. **Manitoba declined.**
+4. **The improvement was regionally concentrated.** Ontario (**+1.6 pp**) and Quebec (**+2.2 pp**),
+   the two largest economies, came in *below* the national +2.9 pp. **Manitoba declined.**
 
-The full write-up is in **[`report/business_conditions_report.tex`](report/business_conditions_report.tex)**
-(see [report/README.md](report/README.md) to compile, or open it on Overleaf).
-
+The full details is in the bdl_assignment_report.pdf
 ---
 
 ## How to read this
@@ -46,7 +44,7 @@ saved**, so all tables and figures are visible without running anything.
 | [07_quarterly_refresh_pipeline](src/07_quarterly_refresh_pipeline.ipynb) | **Part 2** — the pipeline, both modes, guards exercised live |
 
 All shared logic lives in one module, [`src/csbc.py`](src/csbc.py) — schema rules, validation, label
-normalisation, chart styling and the pipeline — so the notebooks, the tests and the CLI enforce
+normalisation, chart styling, and the pipeline so the notebooks, the tests, and the CLI enforce
 exactly the same behaviour.
 
 ---
@@ -77,7 +75,7 @@ Then run notebooks `01` → `07` in order with **Kernel → Restart Kernel and R
 `python -m pytest -q` should report **15 passed**.
 
 Prefer not to use a virtual environment? `pip install -r requirements.txt` into your existing Python
-works identically — the dependencies are just pandas, matplotlib, JupyterLab and pytest.
+works identically; the dependencies are just pandas, matplotlib, JupyterLab and pytest.
 
 ### Runs anywhere
 
@@ -138,9 +136,6 @@ retained, not treated as a fault.
 | Shares summing below 100 | Report, never rescale | The residual is real and **metric-specific** (Investment ~15 pp, Employment ~0 pp) |
 | Four correlated metrics | No composite index | Averaging them would triple-count one shared factor and present it as three confirmations |
 
-A machine-generated audit trail is written to
-[`outputs/data_quality_report.txt`](outputs/data_quality_report.txt).
-
 ---
 
 ## Layout
@@ -171,11 +166,11 @@ business_data_lab_assignment/
 - **Descriptive, not causal.** Every relationship here is an association across survey cells; the
   margin-squeeze reading is the most plausible explanation of the pattern, not a demonstrated one.
 - **No significance testing.** The extract has percentages but no sample sizes, weights or margins of
-  error. That is why Analysis 3 ships a volatility column — it is the closest available proxy for how
+  error. That is why Analysis 3 ships a volatility column, it is the closest available proxy for how
   much to trust a movement.
 - **Four quarters is not a trend.** It supports quarter-to-quarter comparison, not a cycle claim.
 - **Expectations, not outcomes.** Whether these expectations were realised is outside this data.
-- **Correlations are cross-sectional**, describing how metrics vary together across groups — with four
+- **Correlations are cross-sectional**, describing how metrics vary together across groups, with four
   periods there are too few for a time-series correlation, so nothing here says which leads which.
 
 ## Dependencies
