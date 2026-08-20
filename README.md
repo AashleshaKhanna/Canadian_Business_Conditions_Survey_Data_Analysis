@@ -14,7 +14,7 @@ headline suggests.
 
 1. **Sales, employment and profitability** increase-expectations each hit four-quarter highs
    (**+2.9 / +2.1 / +2.1 pp**). **Investment stayed flat** at 17.6%.
-2. **Investment is not a lagging indicator — it is a separate decision.** Two independent
+2. **Investment is not a lagging indicator: it is a separate decision.** Two independent
    diagnostics: one business in six gives **no directional answer** on investment (against ~0% on
    employment), and investment is **statistically uncorrelated** with the other three metrics
    (mean r = 0.10 vs 0.32–0.36).
@@ -145,8 +145,7 @@ business_data_lab_assignment/
 ├── README.md                 this file
 ├── requirements.txt
 ├── report/
-│   ├── business_conditions_report.tex    the full write-up
-│   └── README.md                         how to compile
+│   ├── bdl_assignment_report.pdf    the full report solution
 ├── data/
 │   ├── raw/                  the 4 supplied quarterly CSVs
 │   └── processed/            combined_csbc.csv (written by notebook 01)
