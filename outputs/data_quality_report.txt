@@ -1,0 +1,55 @@
+DATA QUALITY REPORT
+========================================================================
+
+Data CSBC-Q1 2024.csv
+  Rows: 2352
+  Quarter(s): Q1 2024
+  Missing VALUE cells: 0
+  Duplicate natural keys: 0
+  WARNING: 345 complete triplet(s) sum materially below 100; no renormalisation applied.
+  WARNING: 33 group(s) are empty (all three shares zero).
+
+Data CSBC-Q2 2024.csv
+  Rows: 2352
+  Quarter(s): Q2 2024
+  Missing VALUE cells: 7
+  Duplicate natural keys: 0
+  Known label aliases normalized: {'Capital Investment': 588, 'stay the same': 784}
+  WARNING: 7 VALUE cell(s) missing; retained as missing.
+  WARNING: 338 complete triplet(s) sum materially below 100; no renormalisation applied.
+  WARNING: 38 group(s) are empty (all three shares zero).
+
+Data CSBC-Q3 2023.csv
+  Rows: 2352
+  Quarter(s): Q3 2023
+  Missing VALUE cells: 0
+  Duplicate natural keys: 0
+  WARNING: 371 complete triplet(s) sum materially below 100; no renormalisation applied.
+  WARNING: 27 group(s) are empty (all three shares zero).
+
+Data CSBC-Q4 2023.csv
+  Rows: 2352
+  Quarter(s): Q4 2023
+  Missing VALUE cells: 0
+  Duplicate natural keys: 0
+  WARNING: 369 complete triplet(s) sum materially below 100; no renormalisation applied.
+  WARNING: 24 group(s) are empty (all three shares zero).
+
+Combined dataset
+  Rows: 9408
+  Quarters: Q3 2023, Q4 2023, Q1 2024, Q2 2024
+  Missing VALUE cells: 7
+  Duplicate natural keys: 0
+  Empty groups (all three shares zero): 122
+  Triplets short of 100: 1423 of 3130
+  WARNING: 7 VALUE cell(s) missing; retained as missing.
+  WARNING: 1423 complete triplet(s) sum materially below 100; no renormalisation applied.
+  WARNING: 122 group(s) are empty (all three shares zero).
+
+Decisions:
+  Missing percentages are retained as missing, never back-calculated.
+  Directional shares are not renormalized to 100: the residual is real and
+  strongly metric-specific (largest for Investment), so redistributing it
+  would invent responses the survey did not record.
+  Empty groups are reported separately from partial ones - they are absent
+  cells rather than incomplete answers.
