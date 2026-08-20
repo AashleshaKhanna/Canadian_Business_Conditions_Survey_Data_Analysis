@@ -37,13 +37,13 @@ saved**, so all tables and figures are visible without running anything.
 |---|---|
 | [01_data_preprocessing](src/01_data_preprocessing.ipynb) | Load, label drift, missing data, abnormalities, validation → clean dataset |
 | [02_understanding_data](src/02_understanding_data.ipynb) | Composition, distributions, trends, correlation, and what we do about it |
-| [03_analysis_national_expectations](src/03_analysis_national_expectations.ipynb) | **Analysis 1** — the national trend |
-| [04_analysis_sector_profitability](src/04_analysis_sector_profitability.ipynb) | **Analysis 2** — profitability balance by industry |
-| [05_analysis_regional_dispersion](src/05_analysis_regional_dispersion.ipynb) | **Analysis 3** — who actually experienced the improvement |
+| [03_analysis_national_expectations](src/03_analysis_national_expectations.ipynb) | **Analysis 1**: the national trend |
+| [04_analysis_sector_profitability](src/04_analysis_sector_profitability.ipynb) | **Analysis 2**: profitability balance by industry |
+| [05_analysis_regional_dispersion](src/05_analysis_regional_dispersion.ipynb) | **Analysis 3**: who actually experienced the improvement |
 | [06_observations_and_conclusions](src/06_observations_and_conclusions.ipynb) | The story, every claim tied to its number, and the limits |
-| [07_quarterly_refresh_pipeline](src/07_quarterly_refresh_pipeline.ipynb) | **Part 2** — the pipeline, both modes, guards exercised live |
+| [07_quarterly_refresh_pipeline](src/07_quarterly_refresh_pipeline.ipynb) | **Part 2**: the pipeline, both modes, guards exercised live |
 
-All shared logic lives in one module, [`src/csbc.py`](src/csbc.py) — schema rules, validation, label
+All shared logic lives in one module, [`src/csbc.py`](src/csbc.py): schema rules, validation, label
 normalisation, chart styling, and the pipeline so the notebooks, the tests, and the CLI enforce
 exactly the same behaviour.
 
@@ -109,7 +109,7 @@ python src/refresh_quarter.py --new-file "data/raw/Data CSBC-Q3 2024.csv" --mode
 `standalone` runs first by design, so a new file can be inspected **before** any decision to admit it
 to the historical series. The script writes nothing and exits non-zero when a guard fires.
 
-**Guards** — each is triggered and shown blocked in notebook `07`, not merely described:
+**Guards**: each is triggered and shown blocked in notebook `07`, not merely described:
 
 | Attempt | Result |
 |---|---|
@@ -119,7 +119,7 @@ to the historical series. The script writes nothing and exits non-zero when a gu
 | A percentage outside 0–100 | blocked |
 | An incoming file containing two quarters | blocked |
 
-The reasoning: a renamed column or unmapped category could **silently split a historical series** —
+The reasoning: a renamed column or unmapped category could **silently split a historical series**:
 the worst outcome, because the chart still renders and still looks plausible. So the pipeline surfaces
 the change rather than guessing. Missing values, by contrast, are expected and are reported and
 retained, not treated as a fault.
@@ -131,7 +131,7 @@ retained, not treated as a fault.
 | Issue found | Decision | Why |
 |---|---|---|
 | Two renamed labels in Q2 2024 | Map explicitly in code | An unknown label should fail loudly, not start a parallel series |
-| 7 missing `VALUE` cells | Flag, retain, never impute | All 7 sit in the first 18 rows of one file and 6 of 7 are `decrease` — an export artifact; and no safe residual exists to back-fill from |
+| 7 missing `VALUE` cells | Flag, retain, never impute | All 7 sit in the first 18 rows of one file and 6 of 7 are `decrease` an export artifact; and no safe residual exists to back-fill from |
 | 122 all-zero groups | Count separately from partial ones | Absent cells, not incomplete answers |
 | Shares summing below 100 | Report, never rescale | The residual is real and **metric-specific** (Investment ~15 pp, Employment ~0 pp) |
 | Four correlated metrics | No composite index | Averaging them would triple-count one shared factor and present it as three confirmations |
