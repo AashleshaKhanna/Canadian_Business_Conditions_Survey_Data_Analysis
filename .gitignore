@@ -1,0 +1,19 @@
+.venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+
+# LaTeX build artefacts (the .tex is the source; the PDF is generated)
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+
+# Assignment inputs, not deliverables (kept locally, not part of the submission)
+bdl_instruct.pdf
+assignment_instructions.txt

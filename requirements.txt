@@ -1,0 +1,15 @@
+# Canadian Survey on Business Conditions - analysis and pipeline
+# Python 3.10 or newer.
+#
+# Ranges rather than exact pins: the notebooks only rely on long-stable APIs, and loose
+# ranges install cleanly on whatever recent Python a reviewer already has, which matters
+# more here than byte-identical reproducibility.
+
+pandas>=2.0,<3.0
+matplotlib>=3.7,<4.0
+
+# Running the notebooks.
+jupyterlab>=4.0,<5.0
+
+# Running the test suite: python -m pytest -q
+pytest>=7.0,<9.0
