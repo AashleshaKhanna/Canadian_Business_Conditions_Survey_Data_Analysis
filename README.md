@@ -1,6 +1,6 @@
 # Canadian Survey on Business Conditions: Analysis & Quarterly Refresh Pipeline
 
-**Aashlesha Khanna** · Data Scientist Application, Business Data Lab, Canadian Chamber of Commerce
+**Aashlesha Khanna** · Data Scientist
 
 Four quarterly extracts of the Canadian Survey on Business Conditions (Q3 2023 – Q2 2024), analysed
 end to end, plus a pipeline that absorbs future quarters without manual rework.
